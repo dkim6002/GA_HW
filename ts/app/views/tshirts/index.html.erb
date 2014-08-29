@@ -1,0 +1,12 @@
+
+<% @tshirts.each do |t| %>
+  <div class='g-1-3'>
+    <div class='tshirt'>
+      <h2><%= t.title %></h2>
+      <%= image_tag( t.photo_url )%>
+      <%= link_to 'view', tshirt_path(t) %>
+      <%= link_to 'edit', edit_tshirt_path(t) %>
+      <%= link_to 'delete', t, method: :delete %>
+    </div>
+  </div>
+<% end %>

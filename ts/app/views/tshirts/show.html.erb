@@ -1,0 +1,8 @@
+<div class='g-1-3'>
+  <div class='tshirt'>
+    <h2><%= @tshirt.title %></h2>
+    <%= image_tag( @tshirt.photo_url )%>
+    <%= link_to 'Edit', edit_tshirt_path(@tshirt) %>
+    <%= link_to 'delete', @tshirt, method: :delete %>
+  </div>
+</div>
