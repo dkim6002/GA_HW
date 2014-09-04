@@ -14,11 +14,11 @@ class Notification
   def text
     my_num = "7573293665"
 
-    notification = @client.account.messages.create(
+    notification = @client.account.messages.create({
       :to => "7573293665",
       :from => "+17576634656",
       :body => random_compliment
-      )
+      })
     
     # Sends a text to your phone number
 

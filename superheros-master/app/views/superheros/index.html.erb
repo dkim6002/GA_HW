@@ -1,0 +1,6 @@
+<h1>Welcome to the Supheros App</h1>
+<% @superheros.each do |superhero| %>
+	<%= link_to superhero.name, superhero_path(superhero) %>
+<% end %>
+<%= link_to "Create a New Superhero", new_superhero_path %>
+	
