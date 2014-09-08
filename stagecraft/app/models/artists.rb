@@ -1,7 +1,7 @@
 require 'nokogiri'
 require 'open-uri'
 
-# class Artist < ActiveRecord::Base
+class Artist #< ActiveRecord::Base
 	#parse through billboard 100 and get all artists
 	@artist_list = []
 	url = "http://www.billboard.com/rss/charts/hot-100"
@@ -18,5 +18,5 @@ require 'open-uri'
 	puts @artist_list
 
 
-# end
+end
 
