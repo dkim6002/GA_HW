@@ -1,11 +1,12 @@
 require 'nokogiri'
 require 'open-uri'
 
-class SongKick #< ActiveRecord::Base
+class SongKick < ActiveRecord::Base
+
 
 	#figure out how to loop through billboard 100 artist list
 	#Search songkick api for artist id
-	def self.artist_id
+	def self.artist_id 
 
 		artist_search = 'deorro'
 		url = "http://api.songkick.com/api/3.0/search/artists.xml?query=#{artist_search}&apikey=8NUIdWtGgpjrPbIx"
@@ -27,8 +28,8 @@ class SongKick #< ActiveRecord::Base
 			puts "#{type}, #{location}, #{date}, #{time}, #{venue}"
 		end
 	end
-	p = SongKick.new
-	p.event_search
+	# p = SongKick.new
+	# p.event_search
 	
 	#sanitize location by city, state, county
 

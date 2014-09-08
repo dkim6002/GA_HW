@@ -1,9 +1,9 @@
 require 'nokogiri'
 require 'open-uri'
 
-class Artist #< ActiveRecord::Base
-	# has_many :events
-	# has_many :venues, :through => :events
+class Artist < ActiveRecord::Base
+	has_many :events
+	has_many :venues, :through => :events
 
 	#parse through billboard 100 and get all artists
 	def self.get_list	
@@ -18,7 +18,7 @@ class Artist #< ActiveRecord::Base
 	end
 
 	#sanatize list
-	def clean_list
+	def self.clean_list
 		#make sure all entries are unique
 		list = Artist.get_list.uniq
 		return list
@@ -27,8 +27,8 @@ class Artist #< ActiveRecord::Base
 
 
 end
-p = Artist.new
-puts p.clean_list[0]
+# p = Artist.new
+# puts p.clean_list[0]
 
 
 
