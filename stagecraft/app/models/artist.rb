@@ -25,6 +25,10 @@ class Artist < ActiveRecord::Base
 		
 	end
 
+	def search
+
+	end
+
 
 end
 # p = Artist.new
