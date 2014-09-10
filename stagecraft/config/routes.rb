@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
   resources :artists do 
+    # get '/search', to: 'artist#search'
     resources :events do
+      # get'/search', to: 'events#search'
       resource :venues
     end
   end
+
   root 'artists#index'
 
 

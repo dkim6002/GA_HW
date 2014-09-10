@@ -1,15 +1,22 @@
+require 'ransack'
 class ArtistsController < ApplicationController
 
 	def index
-		@artists = Artist.clean_list
+		# q = params[:q]
+		@artists = Artist.find(params[:q])
+		# @events = Event.search(name_cont: q).result
+		# @venue = Venue.search(name_cont: q).result
+	end
+	def new 
 	end
 
-	def new 
-
+	def search 
+		@artists = Artist.get_list
+		@artists = @artists.find(params[:search])
 	end
 
 	def show 
-		@artists = Artist.find(params[:search])
+		@artist = Artist.new
 	end
 
 	def update

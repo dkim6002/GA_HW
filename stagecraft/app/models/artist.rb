@@ -6,7 +6,7 @@ class Artist < ActiveRecord::Base
 	has_many :venues, :through => :events
 
 	#parse through billboard 100 and get all artists
-	def self.get_list	
+	def self.get_list
 		@artist_list = []
 		url = "http://www.billboard.com/rss/charts/hot-100"
 		doc = Nokogiri::XML(open(url))
@@ -20,19 +20,17 @@ class Artist < ActiveRecord::Base
 	#sanatize list
 	def self.clean_list
 		#make sure all entries are unique
-		list = Artist.get_list.uniq
-		return list
+		@list = Artist.get_list.uniq
+		return @list
 		
 	end
-
-	def search
-
+	def search(search)
 	end
 
 
 end
 # p = Artist.new
-# puts p.clean_list[0]
+# puts Artist.clean_list
 
 
 
