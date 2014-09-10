@@ -1,0 +1,24 @@
+
+
+<%= form_tag artists_path, method: :get do %>
+  <%= text_field_tag :q, nil , placeholder: "Search by Artist" %>
+  <%= submit_tag "", :name => nil %>
+<% end %>
+
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<header>
+		<div>
+			<h1>
+				Stagecraft
+			</h1>
+		</div>
+	</header>
+	<%= image_tag("sample2.jpg", :id => "bg") %>
+
+
+</body>
+</html>

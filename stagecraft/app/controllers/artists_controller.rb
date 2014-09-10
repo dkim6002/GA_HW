@@ -3,7 +3,7 @@ class ArtistsController < ApplicationController
 
 	def index
 		# q = params[:q]
-		@artists = Artist.find(params[:q])
+		@artists = Artist.collect(&:get_list).find(params[:q])
 		# @events = Event.search(name_cont: q).result
 		# @venue = Venue.search(name_cont: q).result
 	end
@@ -16,7 +16,7 @@ class ArtistsController < ApplicationController
 	end
 
 	def show 
-		@artist = Artist.new
+		@artist = Artist.find(&:all)
 	end
 
 	def update

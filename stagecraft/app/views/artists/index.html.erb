@@ -1,8 +1,10 @@
-
-
-<% form_tag artist_path, :method => 'get' do %>
+hi
+<% @artists.each do |artist| %>
+	<%= artist.find(&:clean_list).find(params[:q]) %>
+	<% end %>
+<% form_tag artists_path, :method => 'show' do %>
    <p>
-  	<%= text_field_tag :q, :placeholder => "Search by Artist" %>
+  	<%= text_field_tag :q, nil, :placeholder => "Search by Artist" %>
   	<%= submit_tag "Search", :name => nil %>
   </p>
 <% end %>

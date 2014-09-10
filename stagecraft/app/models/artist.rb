@@ -1,5 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
+require 'csv'
 
 class Artist < ActiveRecord::Base
 	has_many :events
@@ -24,9 +25,11 @@ class Artist < ActiveRecord::Base
 		return @list
 		
 	end
-	def search(search)
-	end
-
+	def self.save
+		CSV.open("/Users/DK/dev/wdi/stagecraft/lib/tasks/file.csv", "wb") do |csv|
+			csv << "#{@list}"
+		end
+	end	
 
 end
 # p = Artist.new
