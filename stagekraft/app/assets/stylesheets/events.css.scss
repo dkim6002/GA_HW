@@ -1,0 +1,80 @@
+// Place all the styles related to the events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Cabin+Sketch);
+
+header {
+  font-family: 'Cabin Sketch', cursive;
+  color: white;
+  text-align: center;
+  font-size: 300%;
+  position: absolute;
+  z-index: 1
+}
+
+html { 
+  background: url(sample2.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -200px;
+
+
+}
+
+input:focus {
+	outline: 0;
+}
+
+input[type=text]{
+	color: white;
+	padding: 25px;
+	border-radius: 50px;
+	opacity: 1;
+	border: 1.5px solid rgba(89, 104, 150, 0.5);
+	background: rgba(255, 255, 255, 0.1);
+	box-shadow: 0px 0px 5px #483D8B; 
+	font-family: 'Open Sans', sans-serif;
+  	font-weight: 900;
+  	font-size: 22px;
+}
+input[type=submit]{
+	color: white;
+	padding: 15px;
+	opacity: 1;
+	display: inline-block;
+	position: relative;
+	left: -85px;
+	border-radius: 40px;
+	border: 1.5px solid rgba(89, 104, 150, 0.5);
+	background: rgba(255, 255, 255, 0.1);
+	box-shadow: 0px 0px 5px #4B0082;
+	background: url(http://cl.ly/1B1J1v0c3f3a1S123W3c/icon.png) no-repeat center center;
+	margin:0;
+    width: 60px;
+    height: 60px;
+}
+
+::-webkit-input-placeholder { 
+    color:    white;
+}
+
+video#bgvid {
+position: fixed; right: 0; bottom: 0;
+min-width: 100%; min-height: 100%;
+width: auto; height: auto; z-index: -100;
+background: url(sample2.jpg) no-repeat;
+background-size: cover;
+}
+
+
+

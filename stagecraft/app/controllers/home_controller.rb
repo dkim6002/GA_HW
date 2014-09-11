@@ -7,4 +7,8 @@ class HomeController < ApplicationController
 		# @venue = Venue.search(name_cont: q).result
 	end
 
+	def show
+
+	end
+
 end

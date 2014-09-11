@@ -1,0 +1,16 @@
+
+<video autoplay="" loop="" poster="sample2.jpg" id="bgvid">
+    <source src=["samples.mplayerhq.hu/MPEG-4/vorbis-in-mp4/mi2_vorbis51.mp4"] type="video/mp4">
+    <source src="/assets/media/bg_vid.mp4" type="video/mp4">
+ </video>
+
+<p>
+<strong>Artist:</strong>
+ <%=  %>
+ <%= params[:search] %>
+  <% Event.get_id(params[:search]) %>
+  <%= Event.event_search %>
+</p>
+
+
+<%= link_to 'Back', events_path %>
