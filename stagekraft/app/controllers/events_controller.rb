@@ -1,10 +1,15 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :search]
 
   # GET /events
   # GET /events.json
   def index
 
+  end
+
+  def search
+    @artist_id = Event.get_id(params[:search])
+    @event = Event.event_search
   end
 
   # GET /events/1

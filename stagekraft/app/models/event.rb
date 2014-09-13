@@ -15,7 +15,7 @@ class Event
 	#Search songkick api for artist id
 	def self.get_id(name) 
 
-		@artist_search = name
+		@artist_search = name.gsub(' ','?')
 		url = "http://api.songkick.com/api/3.0/search/artists.xml?query=#{@artist_search}&apikey=8NUIdWtGgpjrPbIx"
 		doc = Nokogiri::HTML(open(url))
 		@id = doc.at_css('artist/@id')
@@ -36,8 +36,5 @@ class Event
 			results << "#{type}, #{location}, #{date}, #{time}, #{venue}"
 		end
 		return results
-	end
-	def search(search)
-		puts search
 	end
 end
