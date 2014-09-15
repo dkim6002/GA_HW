@@ -9,11 +9,13 @@ class Artist
   embeds_many :events
   has_and_belongs_to_many :venues
 
+  validates_uniqueness_of :name
+
  
 
   def self.add_artist
-  	 @name = []
-     url = "http://www.billboard.com/rss/charts/hot-100"
+	 @name = []
+   url = "http://www.billboard.com/rss/charts/hot-100"
 	 doc = Nokogiri::XML(open(url))
 		
 	 doc.xpath("//artist").each do |artist|

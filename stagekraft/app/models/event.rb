@@ -9,8 +9,7 @@ class Event
 
   embedded_in :artist
   has_one :venue
-
-
+  
   #figure out how to loop through billboard 100 artist list
 	#Search songkick api for artist id
 	def self.get_id(name) 
