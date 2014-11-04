@@ -1,16 +1,75 @@
-.hm-bg{
-	background: url(dc_photo.jpg);
-	background-size: cover;
-	height: 500px;
-	width: 100%;
+body{
+	background-color: rgb(66, 206, 206);
 	color: white;
 }
-.hm-title{
-	font-size: 8em;
-	color: white;
-	text-align: center;
-}
+
 .hm-text{
 	text-align: left;
-	margin-left: 18em;
+	margin-left: 2em;
+	margin-top: 2em;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 100;
+	text-align: left;
+	font-size: 200%;
+	float:left;
+	width: 55%;
+	padding:2em;
 }
+
+a:visited {
+	color: #12BCCF;
+}
+
+
+@media (max-width:500px) {
+ .hm-text {
+ 	font-size: 100%;
+ }
+
+}
+
+img {
+	float: right;
+	width:35%;
+	margin-top: 1em;
+	padding-right: 3em;
+}
+
+.login {
+	float: right;
+	margin:0.2em 1em;
+	
+}
+
+.cloud  {
+  position: relative;
+  top: 200px;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: #E6FFFA;
+  animation: cloud 7s linear infinite;
+  -webkit-animation: cloud 7s linear infinite;
+}
+@-webkit-keyframes cloud { 
+    0% { 
+      width:5px;
+      height:5px;
+        left: 920px;
+        top: 115px;
+    }
+
+    100% { 
+      width:20px;
+        left: 980px;
+        top: 80px;
+    }
+}
+
+@media (max-width: 78em) {
+  .cloud {
+    display: none;
+  }
+}
+
+

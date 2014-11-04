@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dwellwell</title>
+  <title>Dwellwell2</title>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,100,700' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<nav>
-		<div class="login">
-			<% if user_signed_in? %>
-				Signed in as <%= current_user.email %> | <%= link_to "dashboard", dashboard_path %> | Not you? <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-				<% else %>
-					<%= link_to "sign in", new_user_session_path %>
-			<% end %>
-		</div>
-	</nav>
-	<p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+	
 
+<nav class="main-nav">
+  <div id="logo">
+ <%= image_tag ('toplogo.svg')%>
+  </div>
+  <div class="login">
+    <% if user_signed_in? %>
+   <%= link_to '<button type="button">Sign Out</button>'.html_safe, destroy_user_session_path, method: :delete %>
+      <% else %>
+      <%= link_to "sign in", new_user_session_path, :rel => 'facebox', :class => 'button' %>
+    <% end %>       
+  </div>
+</nav>
+
+<div class='container'>
 <%= yield %>
+</div>
+
 
 </body>
 </html>

@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  resources :bills
-
-  resources :chores
-
   devise_for :users
   resources :houses
+  resources :chores
+  
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

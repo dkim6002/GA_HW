@@ -1,7 +1,7 @@
-<%= form_for(@chore) do |f| %>
-  <% if @chore.errors.any? %>
+<%= form_for [@chore] do |f| %>
+   <% if @chore.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@chore.errors.count, "error") %> prohibited this chore from being saved:</h2>
+      <h2><%= pluralize(@chore.errors.count, "error") %> prohibited this house from being saved:</h2>
 
       <ul>
       <% @chore.errors.full_messages.each do |message| %>
@@ -9,18 +9,19 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
+    <% end %>
+
 
   <div class="field">
+    <%= f.hidden_field :chore_id, :value => @chore.id %> 
     <%= f.label :title %><br />
-    <%= f.text_field :title%><br />
-  </div>
-  <div class="field">
-    <%= f.label :status %><br />
-    <%= f.text_field :status %><br />
+    <%= f.text_field :title %><br />
+    <%= f.label :assignment %><br />
+    <%= f.text_field :assignment %><br />
   </div>
 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+

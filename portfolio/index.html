@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bigvideo.css">
+</head>
+<body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="lib/bigvideo.js"></script>
+
+<script src="js/source-loader.js"></script>
+<script type="text/javascript">
+	$(function() {
+    var BV = new $.BigVideo();
+    BV.init();
+    BV.show('js/ex.mp4',{ambient:true});
+	});
+</script>
+</body>
+</html>

@@ -1,3 +1,61 @@
 // Place all the styles related to the houses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.housebody {
+	display: block;
+	width: 50%;
+	margin:4em auto;
+	padding: 10px;
+	background-color: white;
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.4);
+	-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.4);
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.4);
+
+}
+
+body {
+	font-family: 'Raleway', sans-serif;
+	font-size: 130%;
+	margin: auto;
+}
+
+.house-container {
+	display: block;
+	width: 50%;
+	margin: 0 auto;
+	color: black;
+	padding: 10px;
+	background-color: white;
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.4);
+	-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.4);
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.4);
+}
+
+.chore-box {
+	display: block;
+	width: 50%;
+	margin:4em  auto;
+	color: black;
+	padding: 20px;
+	background-color: white;
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.4);
+	-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.4);
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.4);
+}
+
+.housebg {
+	margin-top: 12%;
+	margin-left: -80%;
+    background-attachment: fixed;
+    bottom: 0;
+    background-position: center; 
+	width:160%;
+	opacity: 0.8;
+}
+
+
+
+
+
+

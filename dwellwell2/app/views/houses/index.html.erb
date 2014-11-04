@@ -1,23 +1,31 @@
-<h1>Listing houses</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="housebody">
+<h1>Search houses</h1>
 
-  <tbody>
-    <% @houses.each do |house| %>
-      <tr>
-        <td><%= link_to 'Show', house %></td>
-        <td><%= link_to 'Edit', edit_house_path(house) %></td>
-        <td><%= link_to 'Destroy', house, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<section>
+ 	
+ 	<h2>Search for your house:</h2>
+  <%= form_for houses_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+  <ul>
+  <% for house in @houses %>  
+    <li>
+      <%= link_to house.name, house %>
+    </li>
     <% end %>
-  </tbody>
-</table>
+  </ul>
+</section>
 
 <br>
 
-<%= link_to 'New House', new_house_path %>
+<%= link_to 'New House', new_house_path, :rel => 'facebox' %>
+</div>
+
+<div class="housebg">
+  <%= image_tag "houses.svg" %>
+</div>

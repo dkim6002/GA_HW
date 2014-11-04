@@ -1,15 +1,20 @@
 class HousesController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_house, only: [:show, :edit, :update, :destroy]
 
   # GET /houses
   # GET /houses.json
   def index
-    @houses = House.all
+    @houses = House.where(name: params[:search])
   end
 
   # GET /houses/1
   # GET /houses/1.json
   def show
+    @house = House.find(params[:id])
+    @user = User.find(current_user)
+    @user.set(house_key: @house.id)
+    @roommates = User.where(house_key: @house.id)
   end
 
   # GET /houses/new
@@ -69,6 +74,6 @@ class HousesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def house_params
-      params.require(:house).permit!
+      params.require(:house).permit(:name, :address, :city, :state, :unit, :zip, :house_key)
     end
 end

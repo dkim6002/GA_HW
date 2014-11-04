@@ -5,7 +5,11 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  ## mongo db devise error fix
+  include ZeroOidFix
   ## Database authenticatable
+  field :name, type: String
+  field :house_key, type: String
   field :email,              type: String, default: ""
   field :encrypted_password, type: String, default: ""
 
@@ -33,6 +37,5 @@ class User
   # field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
   # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   # field :locked_at,       type: Time
-
-  embedded_in :house
+  has_and_belongs_to_many :houses
 end

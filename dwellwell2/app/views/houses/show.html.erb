@@ -1,4 +1,31 @@
+
+<div class="chore-box">
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_house_path(@house) %> |
-<%= link_to 'Back', houses_path %>
+<h2>Chores:</h2>
+<% if @house.chores.size > 0 %>
+  <% for chore in @house.chores %>
+    <h3 chore-id="<%= chore.id %>" class="<%= chore.is_done ? "done" : '' %>">
+    	
+    	<%= chore.title %> :
+    	<%# for roommate in @roommates %>
+				<%#= roommate['name'] %>
+			<%# end %>
+			<%# @roommates.each do |roommate| %>
+				<%#= roommate.name %>
+			<%# end %>
+			<%= chore.assignment %>
+			<%= link_to 'x', 'http://localhost:3000/chores/' + chore.id, method: 'delete', remote: true, :class => 'delete_chore' %>
+  </h3>
+  <% end %>
+<% end %>
+
+
+<%= link_to 'New Chore', new_chore_path(@house), :rel => 'facebox', :class => 'button' %> 
+<%#= link_to '<button type="button">Edit</button>'.html_safe, edit_house_path(@house), :rel => 'facebox' %>
+
+</div>
+
+<div class="housebg">
+  <%= image_tag "houses.svg" %>
+</div>

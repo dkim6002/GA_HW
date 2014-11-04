@@ -1,3 +1,6 @@
+require 'nokogiri'
+require 'open-uri'
+
 class Event < ActiveRecord::Base
 	belongs_to :artist
 	belongs_to :venue
@@ -12,7 +15,7 @@ class Event < ActiveRecord::Base
 	end
 
 	#searches for artist upcoming events
-	def event_search
+	def self.event_search
 		events_url = "http://api.songkick.com/api/3.0/artists/#{@id}/calendar.xml?apikey=8NUIdWtGgpjrPbIx"
 		events_doc = Nokogiri::HTML(open(events_url))
 		events_doc.css('event').each do |events|
