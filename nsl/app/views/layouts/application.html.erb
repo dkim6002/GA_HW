@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Nova Sports League" %></title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <!-- <div class="icon-bar five-up">
+  <a class="item">
+    <i class="fi-home"></i>
+    <label>Home</label>
+  </a>
+  <a class="item">
+    <i class="fi-bookmark"></i>
+    <label>Bookmark</label>
+  </a>
+  <a class="item">
+    <i class="fi-info"></i>
+    <label>About Us</label>
+  </a>
+  <a class="item">
+    <i class="fi-mail"></i>
+    <label>Contact Us</label>
+  </a>
+  <a class="item">
+    <i class="fi-like"></i>
+    <label>Like</label>
+  </a>
+</div>
+ -->
+
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a id="logo" href="#">Nova Sports League</a></h1>
+        </li>
+      </ul>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li><a href="#slide-2">About Us</a></li>
+          <li><a href="#">Turkey Bowl Registration</a></li>
+          <li><a href="#">Rulebook</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+
+        <!-- Left Nav Section -->
+        
+      </section>
+    </nav>
+    <section id="slide-1" class="homeSlide">
+      <div class="bckgrnd"
+          data-center="background-position: 50% 0px;"
+          data-top-bottom="background-position: 50% -100px;"
+          data-anchor-target="#slide-1"
+      >
+      </div>
+    </section>
+
+    <section id="slide-2">
+      <div class="bckgrnd"
+          data-0="background-color:(255,255,255);"
+          data-top="background-color:(0,0,0);"
+          data-anchor-target="#slide-2"
+      >
+          <div class="hsContainer">
+              <div class="hsContent">
+                  <h2>
+                    About Us
+                  </h2>
+                  <p>
+                    NOVA SPORTS LEAGUE IS ORGANIZED TO PROMOTE TEAMWORK, SPORTSMANSHIP, AND HEALTHY LIVING IN THE NORTHERN VIRGINIA AREA. “NSL” HOPES TO PROVIDE AN OUTLET FOR THE COMMUNITY THROUGH POSITIVE SOCIAL GATHERINGS ALONGSIDE ATHLETIC ENJOYMENT OF SPORTS.
+                  </p>
+              </div>
+          </div>
+      </div>
+    </section>
+
+    <section id="slide-3" class="homeSlide">
+      <div class="bckgrnd"
+          data-center="background-position: 0px 50%;"
+          data-bottom-top="background-position: 0px 40%;"
+          data-top-bottom="background-position: -40px 50%;"
+          data-anchor-target="#slide-3"
+      >
+        <div class="hsContainer">
+            <div class="hsContent">
+                <div class="turkey-bowl"
+                >
+                    <h2>COED FLAG FOOTBALL TOURNAMENT</h2>
+                    <p>
+                    NOVEMBER 29, 2014 - 1ST ANNUAL NSL TOURNAMENT
+                    REGISTRATION OPEN NOW!
+                    PLEASE REVIEW OUR RULEBOOK WHICH INCLUDES A NEW ONSIDE KICK RULE!
+ 
+                    TOURNAMENT UPDATE: 10 SPOTS LEFT, BLACK AND GRAY TEAM COLORS HAVE BEEN TAKEN. 
+                  </p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>
